@@ -4,7 +4,6 @@ This is a organization to group all the cookbooks and docker files required to s
 - Media server applications such as plex, sickbeard, couchpotato, etc to manage and view media
 - Utility applications such as ajenti, openvpn, conky, btsync, bittorrent, vnc. 
 - Notifications system (so that you are notified whenever any service stops or starts, and when media is added)
-- 
 
 This is a docker version of the SparkTree.Chef.Nas cookbook. 
 
