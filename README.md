@@ -10,6 +10,8 @@ This is a docker version of the SparkTree.Chef.Nas cookbook.
 Here are a couple of assumptions we are making:
 - The server will be self hosted, with only one node (if you need a multihosted media server, this wont work for you)
 - Drive storage will be configured using a JBOD array that will be mounted on the host, and shared with the docker containers
+- A Github gist will be used to persistently store secrets and backup data
+- Pushover will be used to send remote notifications
 
 # Host Applications
 The following software will run on the host:
