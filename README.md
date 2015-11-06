@@ -24,6 +24,7 @@ The following software will run on the host:
 - Dynamic DNS updater script
 - Chefdk
 - Docker
+- SMART disk status
 
 # Docker Containers
 The following software will run in docker containers:
