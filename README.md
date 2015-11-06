@@ -42,5 +42,12 @@ The following software will run in docker containers:
 - Backup service
 - Update checker service
 
+# Container Configuration
+- All containers will have configuration service to dynamically generate config files:
+  - https://github.com/jwilder/docker-gen
+  - https://github.com/hashicorp/consul-template
+  - https://github.com/markround/tiller
+  - https://github.com/gliderlabs/registrator
+
 # Installation
 
