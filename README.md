@@ -19,7 +19,7 @@ The following software will run on the host:
 - Greyhole (which will aggregate all drive storage)
 - SSH daemon
 - OpenVPN
-- VNC
+- VNC/Teamviewer
 - Samba (to mount the Greyhole shares locally)
 - Dynamic DNS updater script
 - Chefdk
