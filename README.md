@@ -38,8 +38,8 @@ The following software will run in docker containers:
 - Sickrage/Sickbeard
 - Headphones
 - Nginx/HAProxy router
-- Log viewer web app /fluentd webui
-- BTSynx
+- Log viewer web app /fluentd webui/ loggly aggregator
+- BTSync
 - Backup service
 - Update checker service
 
