@@ -53,7 +53,7 @@ The following software will run in docker containers:
 # Installation
 An `install.sh` script will be created that can be run using:
   
-  wget -O - http://example.com/install.sh | sudo sh
+    wget -O - http://example.com/install.sh | sudo sh
   
 The installer script will be [wrapped in {} ](https://www.reddit.com/r/programming/comments/1pnkxs/dont_pipe_to_your_shell/cd4bu30) to verify download.
 
