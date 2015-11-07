@@ -13,6 +13,7 @@ Here are a couple of assumptions we are making:
 - Drive storage will be configured using a JBOD array that will be mounted on the host, and shared with the docker containers
 - A Github gist will be used to persistently store secrets and backup data
 - Pushover will be used to send remote notifications
+- Assumes that all drives have been formatted and mounted 
 
 # Host Applications
 The following software will run on the host:
