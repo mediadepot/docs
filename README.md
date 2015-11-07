@@ -85,7 +85,7 @@ On second run, it should allow using existing configuration, or allow the user t
 # Persistent Data
 - Sickbeard Tv show names and ids will be saved
 - Couchpotato Movie names and ids will be saved
-- Hosts file entry
+- Hosts file entry template
 
 
 # References
