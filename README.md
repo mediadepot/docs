@@ -82,6 +82,7 @@ On second run, it should
 - https://github.com/hashicorp/consul-template
 - https://github.com/markround/tiller
 - https://github.com/gliderlabs/registrator
+- https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail
 
 
 
