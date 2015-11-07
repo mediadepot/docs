@@ -97,6 +97,7 @@ On second run, it should allow using existing configuration, or allow the user t
 - https://github.com/gliderlabs/registrator
 - https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail
 - http://tldp.org/LDP/abs/html/here-docs.html
+- http://www.faqforge.com/linux/get-the-disk-health-status-with-smart-monitor-tools-on-debian-and-ubuntu-linux/
 
 
 
