@@ -101,6 +101,8 @@ On second run, it should allow using existing configuration, or allow the user t
 - http://xmodulo.com/create-dialog-boxes-interactive-shell-script.html
 - http://tldp.org/LDP/abs/html/here-docs.html
 - http://www.faqforge.com/linux/get-the-disk-health-status-with-smart-monitor-tools-on-debian-and-ubuntu-linux/
+- https://github.com/veggiemonk/awesome-docker
+- 
 
 
 
