@@ -72,7 +72,6 @@ Should ask the user for input, ie. run a wizard or something similar to generate
 
 On second run, it should allow using existing configuration, or allow the user to change any previously specified options.
 
-
 # Depot Chef Cookbook
 - Should attempt to retrieve data from persistent data location (github gist) to use when configuring applications
 - Should install all the above listed Host Application Software
