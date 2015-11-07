@@ -60,19 +60,33 @@ The installer script will be [wrapped in {} ](https://www.reddit.com/r/programmi
 
 The installation script will setup Chef-client by installing ChefDK, run berks install on the cookbook to download all dependencies and then copy the cookbook environment files to the correct location. It will then bootstrap the chef-client run using chef-zero.
 
+Should ask the user for input, ie. run a wizard or something similar to generate the environment file with the correct secrets + config:
+- default username/password
+- github token key
+- pushbullet token key
+- which ssh keys public keys to add
+- github gist id
+- hostname -- used for generating the dns names for each service
+- duckdns token + domain
+- greyhole disk drives to include. 
 
+On second run, it should allow using existing configuration, or allow the user to change any previously specified options.
 
-Should ask the user for input, ie. run a wizard or something similar to generate the environment file with the correct secrets, such a default username/password, github token key, pushbullet token key, 
-
-On second run, it should 
 
 # Depot Chef Cookbook
 - Should attempt to retrieve data from persistent data location (github gist) to use when configuring applications
-- Should install all the above listed software
+- Should install all the above listed Host Application Software
 - Should create a root SSL CA certificate and client cerificates for all client applications that require them. 
+- Should install the Rancher docker container using chef-rancher cookbook (that we may have to create)
+- Define a docker-compose.yml file depending on the options specified in the environment file
+- Run docker-compose (rancher-compose)
+- Create/Update the persistent data file in github gist
+
 
 # Persistent Data
-
+- Sickbeard Tv show names and ids will be saved
+- Couchpotato Movie names and ids will be saved
+- Hosts file entry
 
 
 # References
