@@ -87,6 +87,8 @@ On second run, it should allow using existing configuration, or allow the user t
 - Couchpotato Movie names and ids will be saved
 - Hosts file entry template
 
+# Issues
+- how to handle mounting drives. Should they be mounted via chef. If  yes, how do we configure all the various options for each drive, if no, how do we select all the mounted drives to use with greyhole. 
 
 # References
 - http://www.cyberciti.biz/tips/spice-up-your-unix-linux-shell-scripts.html
@@ -96,6 +98,7 @@ On second run, it should allow using existing configuration, or allow the user t
 - https://github.com/markround/tiller
 - https://github.com/gliderlabs/registrator
 - https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail
+- http://xmodulo.com/create-dialog-boxes-interactive-shell-script.html
 - http://tldp.org/LDP/abs/html/here-docs.html
 - http://www.faqforge.com/linux/get-the-disk-health-status-with-smart-monitor-tools-on-debian-and-ubuntu-linux/
 
