@@ -19,9 +19,9 @@ The following software will run on the host:
 - Greyhole (which will aggregate all drive storage)
 - SSH daemon
 - OpenVPN
-- VNC/Teamviewer
+- Guacamole/VNC/Teamviewer
 - Samba (to mount the Greyhole shares locally)
-- Dynamic DNS updater script
+- Dynamic DNS updater script/DuckDNS
 - Chefdk
 - Docker
 - SMART disk status
@@ -38,10 +38,11 @@ The following software will run in docker containers:
 - Sickrage/Sickbeard
 - Headphones
 - Nginx/HAProxy router
-- Log viewer web app /fluentd webui/ loggly aggregator
-- BTSync
+- Log viewer web app /fluentd webui/ loggly aggregator/Graylog
+- BTSync/SyncThing
 - Backup service
 - Update checker service
+- PopcornTime
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
@@ -50,10 +51,38 @@ The following software will run in docker containers:
   - https://github.com/markround/tiller
   - https://github.com/gliderlabs/registrator
 
-# Installation
+# Installation Script
 An `install.sh` script will be created that can be run using:
   
     wget -O - http://example.com/install.sh | sudo sh
   
 The installer script will be [wrapped in {} ](https://www.reddit.com/r/programming/comments/1pnkxs/dont_pipe_to_your_shell/cd4bu30) to verify download.
+
+The installation script will setup Chef-client by installing ChefDK, run berks install on the cookbook to download all dependencies and then copy the cookbook environment files to the correct location. It will then bootstrap the chef-client run using chef-zero.
+
+
+
+Should ask the user for input, ie. run a wizard or something similar to generate the environment file with the correct secrets, such a default username/password, github token key, pushbullet token key, 
+
+On second run, it should 
+
+# Depot Chef Cookbook
+- Should attempt to retrieve data from persistent data location (github gist) to use when configuring applications
+- Should install all the above listed software
+- Should create a root SSL CA certificate and client cerificates for all client applications that require them. 
+
+# Persistent Data
+
+
+
+# References
+- http://www.cyberciti.biz/tips/spice-up-your-unix-linux-shell-scripts.html
+- https://www.reddit.com/r/programming/comments/1pnkxs/dont_pipe_to_your_shell/cd4bu30
+- https://github.com/jwilder/docker-gen
+- https://github.com/hashicorp/consul-template
+- https://github.com/markround/tiller
+- https://github.com/gliderlabs/registrator
+
+
+
 
