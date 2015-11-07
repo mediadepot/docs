@@ -105,6 +105,6 @@ On second run, it should allow using existing configuration, or allow the user t
 - https://github.com/veggiemonk/awesome-docker
 - https://github.com/CenturyLinkLabs/watchtower
 - https://github.com/phusion/baseimage-docker
-
+- http://gliderlabs.viewdocs.io/docker-alpine/
 
 
