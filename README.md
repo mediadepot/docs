@@ -84,6 +84,7 @@ On second run, it should allow using existing configuration, or allow the user t
 - Create/Update the persistent data file in github gist
 
 
+
 # Persistent Data
 - Sickbeard Tv show names and ids will be saved
 - Couchpotato Movie names and ids will be saved
@@ -91,6 +92,14 @@ On second run, it should allow using existing configuration, or allow the user t
 
 # Issues
 - how to handle mounting drives. Should they be mounted via chef. If  yes, how do we configure all the various options for each drive, if no, how do we select all the mounted drives to use with greyhole. 
+
+# Future Ideas
+- Create a rancher catalog repository to include base templates that are currently not supported. Allows for creating a rancher based application store. 
+  - https://github.com/rancher/rancher/wiki/Setup:-Settings
+  - http://localhost:9090/v1/settings
+    - service.package.catalog.url
+    - catalog.url
+
 
 # References
 - http://www.cyberciti.biz/tips/spice-up-your-unix-linux-shell-scripts.html
