@@ -118,5 +118,6 @@ On second run, it should allow using existing configuration, or allow the user t
 - http://gliderlabs.viewdocs.io/docker-alpine/
 - https://muffinresearch.co.uk/linux-changing-uids-and-gids-for-user/
 - https://github.com/firecat53/dockerfiles
+- https://github.com/Kickball/awesome-selfhosted
 
 
