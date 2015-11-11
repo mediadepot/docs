@@ -119,5 +119,8 @@ On second run, it should allow using existing configuration, or allow the user t
 - https://muffinresearch.co.uk/linux-changing-uids-and-gids-for-user/
 - https://github.com/firecat53/dockerfiles
 - https://github.com/Kickball/awesome-selfhosted
+- https://github.com/docker/docker/pull/11253
+- https://github.com/docker/docker/pull/12648
+- https://github.com/docker/docker/issues/7198
 
 
