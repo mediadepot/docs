@@ -109,6 +109,7 @@ On second run, it should allow using existing configuration, or allow the user t
 - http://docs.rancher.com/rancher/labels/
 - http://rancher.com/virtual-host-routing-using-rancher-load-balancer/
 - http://docs.rancher.com/rancher/rancher-compose/
+- http://docs.rancher.com/rancher/rancher-compose/rancher-services/#advanced-load-balancing-(l7)
 
 
 
