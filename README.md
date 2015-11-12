@@ -100,6 +100,20 @@ On second run, it should allow using existing configuration, or allow the user t
     - service.package.catalog.url
     - catalog.url
 
+# Service Discovery/Automatic SubDomain Assignment/Load Balancing
+- http://docs.rancher.com/rancher/rancher-ui/applications/stacks/adding-balancers/#advanced-routing-options
+- https://github.com/rancher/rancher/issues/2367
+- http://rancher.com/the-magical-moment-when-container-load-balancing-meets-service-discovery/
+- http://rancher.com/load-balancing-support-for-docker-in-rancher/
+- http://rancher.com/load-balancing-support-for-docker-in-rancher/
+- http://docs.rancher.com/rancher/labels/
+- http://rancher.com/virtual-host-routing-using-rancher-load-balancer/
+- http://docs.rancher.com/rancher/rancher-compose/
+
+
+
+# Logging
+- http://blog.treasuredata.com/blog/2015/08/03/5-use-cases-docker-fluentd/
 
 # References
 - http://www.cyberciti.biz/tips/spice-up-your-unix-linux-shell-scripts.html
