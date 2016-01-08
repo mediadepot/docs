@@ -54,6 +54,8 @@ The following software will run in docker containers:
 - Status Page/Dashboard - Dashing/Atlasboard
 - Sandstorm
 - openbazaar
+- SubSonic/Madsonic for Music
+
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
