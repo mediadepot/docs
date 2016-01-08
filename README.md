@@ -55,6 +55,7 @@ The following software will run in docker containers:
 - Sandstorm
 - openbazaar
 - SubSonic/Madsonic for Music
+- Huginn/Bip Automation
 
 
 # Container Configuration
