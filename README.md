@@ -44,6 +44,13 @@ The following software will run in docker containers:
 - Backup service
 - Update checker service
 - PopcornTime
+- Lychee
+- Koken.me
+- Guacamole (VNC)
+- LazyLibrarian
+- OpenVPN_AS
+- StremIO
+- SyncThing
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
