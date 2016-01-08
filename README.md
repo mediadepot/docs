@@ -35,7 +35,7 @@ The following software will run in docker containers:
 - Couchpotato
 - Deluge/Transmission
 - Headphones
-- Plex
+- Plex/Emby
 - Sickrage/Sickbeard
 - Headphones
 - Nginx/HAProxy router
