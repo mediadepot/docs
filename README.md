@@ -56,6 +56,7 @@ The following software will run in docker containers:
 - openbazaar
 - SubSonic/Madsonic/Sonarr/koel for Music
 - Huginn/Bip Automation
+- SqlPad
 
 
 # Container Configuration
