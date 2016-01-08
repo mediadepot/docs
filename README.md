@@ -52,6 +52,7 @@ The following software will run in docker containers:
 - StremIO
 - SyncThing
 - Status Page/Dashboard - Dashing/Atlasboard
+- Sandstorm
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
