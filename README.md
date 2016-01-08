@@ -51,6 +51,7 @@ The following software will run in docker containers:
 - OpenVPN_AS
 - StremIO
 - SyncThing
+- Status Page/Dashboard - Dashing/Atlasboard
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
