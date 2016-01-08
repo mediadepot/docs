@@ -53,6 +53,7 @@ The following software will run in docker containers:
 - SyncThing
 - Status Page/Dashboard - Dashing/Atlasboard
 - Sandstorm
+- openbazaar
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
