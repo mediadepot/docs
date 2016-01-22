@@ -33,7 +33,7 @@ The following software will run in docker containers:
 - Rancher
 - Ajenti? (does this make sense, or should it just be run on the Host)
 - Couchpotato
-- Deluge/Transmission
+- Deluge/Hadouken
 - Headphones
 - Plex/Emby
 - Sickrage/Sickbeard
