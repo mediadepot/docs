@@ -54,7 +54,7 @@ The following software will run in docker containers:
 - Status Page/Dashboard - Dashing/Atlasboard
 - Sandstorm
 - openbazaar
-- SubSonic/Madsonic/Sonarr/koel for Music
+- SubSonic/Madsonic/Sonarr/koel for Music/ Mopidy
 - Huginn/Bip Automation
 - SqlPad
 
