@@ -130,6 +130,26 @@ On second run, it should allow using existing configuration, or allow the user t
 # Logging
 - http://blog.treasuredata.com/blog/2015/08/03/5-use-cases-docker-fluentd/
 
+# Storage
+## Union/Local JBOD
+- mergerfs - https://www.linuxserver.io/index.php/2016/02/06/snapraid-mergerfs-docker-the-perfect-home-media-server-2016/
+- MHDDFS
+- AUFS
+- BTRFS
+- unRAID
+- RAID (mdadm)
+- ZFS
+
+## Distributed File Systems
+https://www.reddit.com/r/DataHoarder/comments/4ey8zj/looking_for_a_distributed_media_storage_solution/
+https://www.reddit.com/r/HomeServer/comments/4ey3qw/looking_for_a_distributed_media_storage_solution/
+
+- GlusterFS
+- CephFS
+- LizardFS
+- MooseFS
+
+
 # References
 - http://www.cyberciti.biz/tips/spice-up-your-unix-linux-shell-scripts.html
 - https://www.reddit.com/r/programming/comments/1pnkxs/dont_pipe_to_your_shell/cd4bu30
