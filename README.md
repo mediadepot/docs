@@ -172,5 +172,7 @@ https://www.reddit.com/r/HomeServer/comments/4ey3qw/looking_for_a_distributed_me
 - https://github.com/docker/docker/pull/12648
 - https://github.com/docker/docker/issues/7198
 - https://docs.docker.com/engine/reference/api/docker_remote_api_v1.21/#monitor-docker-s-events
-
+- https://help.ubuntu.com/community/Smartmontools
+- https://github.com/jtimberman/smartmontools-cookbook/blob/master/recipes/default.rb
+- https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in
 
