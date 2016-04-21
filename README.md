@@ -17,11 +17,11 @@ Here are a couple of assumptions we are making:
 
 # Host Applications
 The following software will run on the host:
-- Greyhole (which will aggregate all drive storage)
+- JBOD/Union FS (Greyhole/Mergerfs)
 - SSH daemon
 - OpenVPN
-- Guacamole/VNC/Teamviewer
-- Samba (to mount the Greyhole shares locally)
+- VNC server
+- Samba
 - Dynamic DNS updater script/DuckDNS
 - Chefdk
 - Docker
