@@ -39,7 +39,7 @@ The following software will run in docker containers:
 - Sickrage/Sickbeard
 - Headphones
 - Nginx/HAProxy router
-- Log viewer web app /fluentd webui/ loggly aggregator/Graylog
+- Log viewer web app /[splunk](http://www.splunk.com/en_us/products/splunk-enterprise/free-vs-enterprise.html)/fluentd webui/ loggly aggregator/Graylog
 - BTSync/SyncThing
 - Backup service
 - Update checker service
