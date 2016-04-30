@@ -17,4 +17,6 @@ This document specifies the properties of Docker containers maintained by Mediad
 - Containers should store their configuration data in `/srv/{application name}/config`
   - Configuration data is any data that is required to restore a new installation of the application to its previously configured state (*.ini files, database files, etc)
 - Applications which are installed via a package or expect to live at a specific path on the file system should be stored in the application folders listed above and symlinked to the expected paths.
-- 
+- Every application container should create a `/srv/start.sh` script which does the following
+  - calls the `/srv/config.sh` script provided by `mediadepot/base` to generate the depot user with correct UID and GID 
+  - should run the application as the depot user
