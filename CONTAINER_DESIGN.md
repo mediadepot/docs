@@ -20,3 +20,7 @@ This document specifies the properties of Docker containers maintained by Mediad
 - Every application container should create a `/srv/start.sh` script which does the following
   - calls the `/srv/config.sh` script provided by `mediadepot/base` to generate the depot user with correct UID and GID 
   - should run the application as the depot user
+
+
+
+- http://www.linuxserver.io/index.php/migrating-to-linuxserver-io-dockers/
