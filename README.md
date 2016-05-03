@@ -57,6 +57,7 @@ The following software will run in docker containers:
 - Huginn/Bip Automation
 - SqlPad
 - visallo
+- dillinger
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
