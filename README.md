@@ -32,28 +32,28 @@ The following software will run in docker containers:
 - Vault or other credential/secret management system
 - Rancher
 - Ajenti? (does this make sense, or should it just be run on the Host)
-- Couchpotato
-- Deluge/Hadouken
-- Headphones
-- Plex/Emby
-- Sickrage/Sickbeard
-- Headphones
+- [Couchpotato](https://github.com/mediadepot/docker-couchpotato)
+- [Deluge](https://github.com/mediadepot/docker-deluge)/Hadouken
+- [Headphones](https://github.com/mediadepot/docker-headphones)
+- [Plex](https://github.com/mediadepot/docker-plex)/Emby
+- [Sickrage](https://github.com/mediadepot/docker-sickrage)/Sickbeard
+- [Headphones](https://github.com/mediadepot/docker-headphones)
 - Nginx/HAProxy router
 - Log viewer web app /[splunk](http://www.splunk.com/en_us/products/splunk-enterprise/free-vs-enterprise.html)/fluentd webui/ loggly aggregator/Graylog
-- BTSync/SyncThing/Seafile
+- [BTSync](https://github.com/mediadepot/docker-btsync)/SyncThing/Seafile
 - Backup service
 - Update checker service
 - PopcornTime
 - Lychee
 - Koken.me
-- Guacamole (VNC)
-- LazyLibrarian
+- [Guacamole (VNC)](https://github.com/mediadepot/docker-guacamole)
+- [LazyLibrarian](https://github.com/mediadepot/docker-lazylibrarian)
 - OpenVPN_AS
 - StremIO
 - Status Page/Dashboard - Dashing/Atlasboard
 - Sandstorm
 - openbazaar
-- SubSonic/Madsonic/Sonarr/koel for Music/ Mopidy
+- SubSonic/[Madsonic](https://github.com/mediadepot/docker-madsonic)/Sonarr/koel for Music/ Mopidy
 - Huginn/Bip Automation
 - SqlPad
 
