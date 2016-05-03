@@ -40,7 +40,7 @@ The following software will run in docker containers:
 - Headphones
 - Nginx/HAProxy router
 - Log viewer web app /[splunk](http://www.splunk.com/en_us/products/splunk-enterprise/free-vs-enterprise.html)/fluentd webui/ loggly aggregator/Graylog
-- BTSync/SyncThing
+- BTSync/SyncThing/Seafile
 - Backup service
 - Update checker service
 - PopcornTime
@@ -50,7 +50,6 @@ The following software will run in docker containers:
 - LazyLibrarian
 - OpenVPN_AS
 - StremIO
-- SyncThing
 - Status Page/Dashboard - Dashing/Atlasboard
 - Sandstorm
 - openbazaar
