@@ -56,7 +56,7 @@ The following software will run in docker containers:
 - SubSonic/[Madsonic](https://github.com/mediadepot/docker-madsonic)/Sonarr/koel for Music/ Mopidy
 - Huginn/Bip Automation
 - SqlPad
-
+- visallo
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
