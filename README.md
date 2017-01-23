@@ -58,6 +58,7 @@ The following software will run in docker containers:
 - SqlPad
 - visallo
 - dillinger
+- jDownloader
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
