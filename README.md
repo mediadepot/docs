@@ -58,7 +58,7 @@ The following software will run in docker containers:
 - SqlPad
 - visallo
 - dillinger
-- jDownloader
+- [jDownloader](https://hub.docker.com/r/aptalca/docker-jdownloader2/)
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
