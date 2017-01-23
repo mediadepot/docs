@@ -60,6 +60,8 @@ The following software will run in docker containers:
 - dillinger
 - [jDownloader](https://hub.docker.com/r/aptalca/docker-jdownloader2/)
 
+- Ideas for other containers - https://github.com/DFabric/DPlatform-ShellCore
+
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
   - https://github.com/jwilder/docker-gen
