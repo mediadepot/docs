@@ -59,7 +59,7 @@ The following software will run in docker containers:
 - visallo
 - dillinger
 - [jDownloader](https://hub.docker.com/r/aptalca/docker-jdownloader2/)
-
+- alltube
 - Ideas for other containers - https://github.com/DFabric/DPlatform-ShellCore
 
 # Container Configuration
