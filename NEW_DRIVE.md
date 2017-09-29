@@ -16,6 +16,7 @@
   -  `smartctl -a /dev/sdX` - replace `sdX` with your device id. 
 
 ## (Optional) Verify the disk health
+- This step can take hours, and is not really required as Mediadepot has a cronjob that tests for bad blocks and runs S.M.A.R.T tests continuously. 
 - Run [badblocks](https://wiki.archlinux.org/index.php/badblocks)
   - `badblocks -c 65536 -b 4096 -vs /dev/sdX`
 
