@@ -16,6 +16,8 @@
   -  `smartctl -a /dev/sdX` - replace `sdX` with your device id. 
 
 ## Verify the disk health
+- Run [badblocks](https://wiki.archlinux.org/index.php/badblocks)
+  - `badblocks -b 4096 -vs /dev/sdX`
 
   
 ## Format the new disk
