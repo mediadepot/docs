@@ -55,7 +55,10 @@ UUID=547b073d-e591-4913-b4fb-7c5084353979 /mnt/drive2             ext4    defaul
   - a response of `fuse: mountpoint is not empty` can be ignored. its a message from MergerFS. 
 
 ## Add the disk to MergerFS
-- `xattr -w user.mergerfs.srcmounts +/mnt/driveX /media/storage/.mergerfs` - replace `driveX` with mount location
+- Temporarily add the new disk mount path to the MergerFS system. 
+  - `xattr -w user.mergerfs.srcmounts +/mnt/driveX /media/storage/.mergerfs` - replace `driveX` with mount location
+- Rebalance the MergerFS disks
+  - `mergerfs.balance /media/storage`
 
 ## (Optional) RSync over any data from previous disk. 
 
@@ -63,3 +66,5 @@ UUID=547b073d-e591-4913-b4fb-7c5084353979 /mnt/drive2             ext4    defaul
 ## Resources
 - https://wiki.amahi.org/index.php/Adding_a_second_hard_drive_to_your_HDA
 - https://askubuntu.com/questions/334022/mount-error-special-device-does-not-exist
+- https://github.com/trapexit/backup-and-recovery-howtos/blob/master/docs/recovery_(mergerfs,snapraid).md
+- https://github.com/trapexit/mergerfs-tools
