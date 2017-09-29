@@ -24,7 +24,8 @@
 - For your new disks, format them with ext4
   - `mkfs.ext4 -L drive# -j /dev/sdX` - replace `drive#` and `sdX` with drive number and device id respectively. 
   - When prompted, proceed to format the entire device using 'y'
-
+- Tell the kernel to re-read the partition table
+  - `sfdisk -R`
 
 ## Mount the disk on startup
 - Identify the hard drive to mount and copy the UUID from the output that corresponds to the hard drive (i.e. sdb)
@@ -59,3 +60,4 @@ UUID=547b073d-e591-4913-b4fb-7c5084353979 /var/hda/files/drives/drive1 ext4 defa
 
 ## Resources
 - https://wiki.amahi.org/index.php/Adding_a_second_hard_drive_to_your_HDA
+- https://askubuntu.com/questions/334022/mount-error-special-device-does-not-exist
