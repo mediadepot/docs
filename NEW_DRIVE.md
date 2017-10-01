@@ -62,9 +62,29 @@ UUID=547b073d-e591-4913-b4fb-7c5084353979 /mnt/drive2             ext4    defaul
 
 ## (Optional) RSync over any data from previous disk. 
 
+This command can be used to synchronize a folder, and also resume copying when it's aborted half way. The command to copy one disk is:
+
+`rsync -avxHAWX --numeric-ids --info=progress2 /mnt/disk_source/ /mnt/disk3/`
+
+The options are:
+
+```
+-a  : all files, with permissions, etc..
+-v  : verbose, mention files
+-x  : stay on one file system
+-H  : preserve hard links (not included with -a)
+-A  : preserve ACLs/permissions (not included with -a)
+-W  : copy files whole (without rsync algorithm)
+-X  : preserve extended attributes (not included with -a)
+--numeric-ids : don't map uid/gid values by user/group name
+--info=progress2 : instead of --progress is useful for large transfers, as it gives overall progress
+```
+Trailing slash on `/mnt/disk_source/` is important as it means that the *content* of `disk_source` folder will be copied into the destionation folder, instead of copying the `disk_source` folder *into* the destination. 
+
 
 ## Resources
 - https://wiki.amahi.org/index.php/Adding_a_second_hard_drive_to_your_HDA
 - https://askubuntu.com/questions/334022/mount-error-special-device-does-not-exist
 - https://github.com/trapexit/backup-and-recovery-howtos/blob/master/docs/recovery_(mergerfs,snapraid).md
 - https://github.com/trapexit/mergerfs-tools
+- https://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another
