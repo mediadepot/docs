@@ -58,7 +58,9 @@ The following software will run in docker containers:
 - dillinger
 - [jDownloader](https://hub.docker.com/r/aptalca/docker-jdownloader2/)
 - alltube
-- Ideas for other containers - https://github.com/DFabric/DPlatform-ShellCore
+- bookstack
+- tagspaces
+- Ideas for other containers - https://github.com/DFabric/DPlatform-ShellCore https://github.com/Kickball/awesome-selfhosted#read-it-later-lists
 
 # Container Configuration
 - All containers will have configuration service to dynamically generate config files:
