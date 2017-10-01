@@ -46,7 +46,7 @@ The following software will run in docker containers:
 - Lychee/Photato/Koken.me/chevereto
 - [Guacamole (VNC)](https://github.com/mediadepot/docker-guacamole)
 - [LazyLibrarian](https://github.com/mediadepot/docker-lazylibrarian)
-- OpenVPN_AS
+- OpenVPN_AS/pritunl
 - StremIO
 - Status Page/Dashboard - Dashing/Atlasboard
 - Sandstorm
