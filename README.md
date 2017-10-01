@@ -40,7 +40,7 @@ The following software will run in docker containers:
 - [Headphones](https://github.com/mediadepot/docker-headphones)
 - Nginx/HAProxy router
 - Log viewer web app /[splunk](http://www.splunk.com/en_us/products/splunk-enterprise/free-vs-enterprise.html)/fluentd webui/ loggly aggregator/Graylog
-- [BTSync](https://github.com/mediadepot/docker-btsync)/SyncThing/Seafile/Pydio
+- [BTSync](https://github.com/mediadepot/docker-btsync)/SyncThing/Seafile/Pydio/Nextcloud
 - Backup service
 - Update checker service
 - PopcornTime
