@@ -43,7 +43,7 @@ The following software will run in docker containers:
 - [BTSync](https://github.com/mediadepot/docker-btsync)/SyncThing/Seafile/Pydio/Nextcloud
 - Backup service
 - Update checker service
-- Lychee/Photato/Koken.me
+- Lychee/Photato/Koken.me/chevereto
 - [Guacamole (VNC)](https://github.com/mediadepot/docker-guacamole)
 - [LazyLibrarian](https://github.com/mediadepot/docker-lazylibrarian)
 - OpenVPN_AS
