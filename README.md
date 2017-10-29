@@ -60,6 +60,7 @@ The following software will run in docker containers:
 - alltube
 - bookstack
 - tagspaces
+- dashboard/[muximux](https://github.com/mescon/Muximux)
 - Ideas for other containers - https://github.com/DFabric/DPlatform-ShellCore https://github.com/Kickball/awesome-selfhosted#read-it-later-lists
 
 # Container Configuration
