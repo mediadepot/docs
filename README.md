@@ -33,7 +33,16 @@ The following software will run in docker containers:
 - Rancher
 - Ajenti? (does this make sense, or should it just be run on the Host)
 - [Couchpotato](https://github.com/mediadepot/docker-couchpotato)
-- [Deluge](https://github.com/mediadepot/docker-deluge)/Hadouken/ruTorrent
+- [Deluge](https://github.com/mediadepot/docker-deluge)/Hadouken/ruTorrent/rTorrent (torrent downloaders)
+  - Supports multiple watch directories
+  - Supports multiple/dynamic download directories
+  - Supports multiple/dynamic completed directories
+  - Supports user/password authentication
+  - Supports auto-labeling
+  - Supports scheduling/QoS
+  - Can work in docker container
+  - Auto cleanup?
+  
 - [Headphones](https://github.com/mediadepot/docker-headphones)
 - [Plex](https://github.com/mediadepot/docker-plex)/Emby
 - [Sickrage](https://github.com/mediadepot/docker-sickrage)/Sickbeard
