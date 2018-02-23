@@ -42,7 +42,6 @@ The following software will run in docker containers:
   - Supports scheduling/QoS
   - Can work in docker container
   - Auto cleanup?
-  
 - [Headphones](https://github.com/mediadepot/docker-headphones)
 - [Plex](https://github.com/mediadepot/docker-plex)/Emby
 - [Sickrage](https://github.com/mediadepot/docker-sickrage)/Sickbeard
