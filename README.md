@@ -33,7 +33,7 @@ The following software will run in docker containers:
 - Rancher
 - Ajenti? (does this make sense, or should it just be run on the Host)
 - [Couchpotato](https://github.com/mediadepot/docker-couchpotato)
-- [Deluge](https://github.com/mediadepot/docker-deluge)/Hadouken/ruTorrent/rTorrent (torrent downloaders)
+- [Deluge](https://github.com/mediadepot/docker-deluge)/Hadouken/ruTorrent/[rTorrent](https://github.com/mediadepot/docker-rtorrent) (torrent downloaders)
   - Supports multiple watch directories
   - Supports multiple/dynamic download directories
   - Supports multiple/dynamic completed directories
@@ -49,6 +49,7 @@ The following software will run in docker containers:
 - Nginx/HAProxy router
 - Log viewer web app /[splunk](http://www.splunk.com/en_us/products/splunk-enterprise/free-vs-enterprise.html)/fluentd webui/ loggly aggregator/Graylog
 - [BTSync](https://github.com/mediadepot/docker-btsync)/SyncThing/Seafile/Pydio/Nextcloud
+- [FileRun](http://www.filerun.com/) - file explorer
 - Backup service
 - Update checker service
 - Lychee/Photato/Koken.me/chevereto
@@ -59,7 +60,7 @@ The following software will run in docker containers:
 - Status Page/Dashboard - Dashing/Atlasboard
 - Sandstorm
 - openbazaar
-- SubSonic/[Madsonic](https://github.com/mediadepot/docker-madsonic)/Sonarr/koel for Music/Mopidy/sonerezh/cloudtunes
+- AirSonic/SubSonic/[Madsonic](https://github.com/mediadepot/docker-madsonic)/Sonarr/koel for Music/Mopidy/sonerezh/cloudtunes
 - Huginn/Bip Automation
 - SqlPad
 - visallo
