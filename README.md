@@ -25,7 +25,7 @@ The following software will run on the host:
 - Dynamic DNS updater script/DuckDNS
 - Chefdk
 - Docker
-- SMART disk status
+- SMART disk status - https://www.hdsentinel.com/hard_disk_sentinel_linux.php
 
 # Docker Containers
 The following software will run in docker containers:
