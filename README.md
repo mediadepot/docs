@@ -45,6 +45,7 @@ The following software will run in docker containers:
 - [Headphones](https://github.com/mediadepot/docker-headphones)
 - [Plex](https://github.com/mediadepot/docker-plex)/Emby
 - [Plex-Requests](https://github.com/mediadepot/docker-plexrequests)/Ombi
+- [PlexPy](https://github.com/mediadepot/docker-plexpy)/Tautulli
 - [Sickrage](https://github.com/mediadepot/docker-sickrage)/Sickbeard
 - [Headphones](https://github.com/mediadepot/docker-headphones)
 - Nginx/HAProxy router
