@@ -51,7 +51,7 @@ The following software will run in docker containers:
 - Nginx/HAProxy router
 - Log viewer web app /[splunk](http://www.splunk.com/en_us/products/splunk-enterprise/free-vs-enterprise.html)/fluentd webui/ loggly aggregator/Graylog/rtail
 - [BTSync](https://github.com/mediadepot/docker-btsync)/SyncThing/Seafile/Pydio/Nextcloud
-- [FileRun](http://www.filerun.com/) - file explorer
+- [FileRun](https://github.com/mediadepot/docker-filerun) - file explorer
 - Backup service
 - Update checker service
 - Lychee/Photato/Koken.me/chevereto
@@ -74,6 +74,7 @@ The following software will run in docker containers:
 - dashboard/[muximux](https://github.com/mescon/Muximux)
 - monica - personal relationship manager
 - paperless/ambar/mayan EDMS - document archival system + search
+- [lidarr](https://github.com/lidarr/Lidarr)
 - Ideas for other containers - https://github.com/DFabric/DPlatform-ShellCore https://github.com/Kickball/awesome-selfhosted#read-it-later-lists
 
 # Container Configuration
