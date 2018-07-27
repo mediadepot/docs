@@ -52,7 +52,7 @@ The following software will run in docker containers:
 - Log viewer web app /[splunk](http://www.splunk.com/en_us/products/splunk-enterprise/free-vs-enterprise.html)/fluentd webui/ loggly aggregator/Graylog/rtail
 - [BTSync](https://github.com/mediadepot/docker-btsync)/SyncThing/Seafile/Pydio/Nextcloud
 - [FileRun](https://github.com/mediadepot/docker-filerun) - file explorer
-- Backup service
+- duplicati - Backup service
 - Update checker service
 - Lychee/Photato/Koken.me/chevereto
 - [Guacamole (VNC)](https://github.com/mediadepot/docker-guacamole)
