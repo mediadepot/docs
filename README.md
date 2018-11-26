@@ -2,38 +2,42 @@ This is the WIP design documentation for mediadepot v2.
 For archived v1 docs, check the [`v1` branch](https://github.com/mediadepot/docs/tree/v1)
 
 # Planning
-This is a organization to group all the cookbooks and docker files required to setup up a self-hosted media server with the following capabilities:
-- Some form of JBOD disk storage (most likely greyhole as that's what I'm currently using)
-- Media server applications such as plex, sickbeard, couchpotato, etc to manage and view media
-- Utility applications such as ajenti, openvpn, conky, btsync, bittorrent, vnc. 
-- Notifications system (so that you are notified whenever any service stops or starts, and when media is added)
+This is an organization to group all the configuration and docker images required to setup a self-hosted media server with the following capabilities:
 
-This is a docker version of the SparkTree.Chef.Nas cookbook. 
+- JBOD disk storage (allowing you to aggregate and transparently interact with multiple physical disks as a single volume)
+- Media server applications such as plex, sickbeard, couchpotato, etc to manage and view media
+- Utility applications such as ajenti, openvpn, conky, btsync, bittorrent.
+- Notifications system (so that you are notified whenever any service stops or starts, and when media is added)
+- Easy system OS updates - via a minimal OS (CoreOS or Atomic Host)
 
 # Assumptions
 Here are a couple of assumptions we are making:
 - The server will be self hosted, with only one node (if you need a multihosted media server, this wont work for you)
-- Drive storage will be configured using a JBOD array that will be mounted on the host, and shared with the docker containers
-- A Github gist will be used to persistently store secrets and backup data
+- Drive storage will be configured using a JBOD array that will be mounted on the host, and can be shared with the docker containers
 - Pushover will be used to send remote notifications
 - Assumes that all drives have been formatted and mounted 
+- **(NEW)** Dockerized applications will be run using [LinuxServer](https://github.com/linuxserver) created images where possible, leveraging open source community
+- **(NEW)** Dockerized applications will store their configuration on the file system, to ensure that it can persist across container destruction
+- **(NEW)** Minimal OS which primarily runs docker daemon.
+- **(NEW)** Container management is done via Rancher v2
+
 
 # Host Applications
 The following software will run on the host:
-- JBOD/Union FS (Greyhole/Mergerfs)
+- JBOD/Union FS (Mergerfs)
 - SSH daemon
-- OpenVPN
-- VNC server
 - Samba
-- Dynamic DNS updater script/DuckDNS
-- Chefdk
 - Docker
-- SMART disk status - https://www.hdsentinel.com/hard_disk_sentinel_linux.php
+- SMART disk status - https://www.hdsentinel.com/hard_disk_sentinel_linux.php or similar
+- **(NEW)** SnapRAID for filesystem checksum
+
 
 # Docker Containers
-The following software will run in docker containers:
+The following software can be run via docker containers:
+- **(NEW)** **(REQUIRED)** Dynamic DNS updater script/DuckDNS
+- **(NEW)** **(REQUIRED)** Rancher v2
+
 - Vault or other credential/secret management system
-- Rancher
 - Ajenti? (does this make sense, or should it just be run on the Host)
 - [Couchpotato](https://github.com/mediadepot/docker-couchpotato)
 - [Deluge](https://github.com/mediadepot/docker-deluge)/Hadouken/ruTorrent/[rTorrent](https://github.com/mediadepot/docker-rtorrent) (torrent downloaders)
