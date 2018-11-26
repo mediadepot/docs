@@ -1,3 +1,6 @@
+This is the WIP design documentation for mediadepot v2.
+For archived v1 docs, check the [`v1` branch](https://github.com/mediadepot/docs/tree/v1)
+
 # Planning
 This is a organization to group all the cookbooks and docker files required to setup up a self-hosted media server with the following capabilities:
 - Some form of JBOD disk storage (most likely greyhole as that's what I'm currently using)
