@@ -36,7 +36,8 @@ The following software will run on the host:
 The following software can be run via docker containers:
 - **(NEW)** **(REQUIRED)** Dynamic DNS updater script/DuckDNS
 - **(NEW)** **(REQUIRED)** Rancher v2
-
+- **(NEW)** Healthchecks/Healthchecks container for Cron status tracking https://hub.docker.com/r/galexrt/healthchecks
+- **(NEW)** Backup via Rclone
 - Vault or other credential/secret management system
 - Ajenti? (does this make sense, or should it just be run on the Host)
 - [Couchpotato](https://github.com/mediadepot/docker-couchpotato)
