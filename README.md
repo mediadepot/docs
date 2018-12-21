@@ -83,6 +83,7 @@ The following software can be run via docker containers:
 - monica - personal relationship manager
 - paperless/ambar/mayan EDMS - document archival system + search
 - [lidarr](https://github.com/lidarr/Lidarr)
+- [klaxon](https://github.com/themarshallproject/klaxon) website change tracking
 - Ideas for other containers - https://github.com/DFabric/DPlatform-ShellCore https://github.com/Kickball/awesome-selfhosted#read-it-later-lists
 
 # Container Configuration
