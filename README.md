@@ -1,6 +1,118 @@
 This is the WIP design documentation for mediadepot v2.
 For archived v1 docs, check the [`v1` branch](https://github.com/mediadepot/docs/tree/v1)
 
+# Goal
+The overall goal for this project is to automate the setup and configuration of an home server.
+
+# Requirements
+
+- The server will be self hosted, with only one node (if you need a multihosted media server, this wont work for you)
+- The server will be running headless (no monitor is required)
+- The server will be running a minimal OS/hypervisor. This is to limit the amount of OS maintenance required, and ensure
+that all software is run in a maintainable & isolated way.
+- The server will be using JBOD disk storage (allowing you to aggregate and transparently interact with multiple physical disks as a single volume)
+    - Redundancy is supported but not a requirement.
+
+# Design
+
+The configured server will run the following software. Check the [DESIGN.md](DESIGN.md) document for reasoning and dismissed alternatives.
+
+## OS
+CoreOS was chosen as the Operating System for MediaDepot servers. A container-focused OS that's designed for painless management and
+very little overhead. It assumes that user workloads and applications are run inside docker containers, leaving the OS clean and minimal.
+
+See [DESIGN.md](DESIGN.md) for more information
+
+## `MediaDepot` Services
+During installation the MediaDepot configuration engine ([mediadepot/ignition](https://www.github.com/mediadepot/ignition))
+will install a handful of Systemd services (mostly running docker containers). These are **required** services,
+and provide a foundation that all user Docker containers can build ontop of.
+
+- [MergerFS](https://github.com/trapexit/mergerfs) - JBOD disk storage (allowing you to aggregate and transparently interact with multiple physical disks as a single volume)
+- [DNSMasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) - Runs a tiny DNS server, ensuring that all ``*.depot.lan` requests resolve to the server.
+- [NetData](https://github.com/netdata/netdata) - Runs a efficient performance monitoring application that can be used to view server utilization remotely
+- [Samba](https://www.samba.org/) - Runs a Samba (SMB) server (which is compatible with all major OS's), with automatically created network shares.
+- [SmartMonTools](https://www.smartmontools.org/) - S.M.A.R.T disk monitoring to ensure that all storage hard drives are working correctly.
+- [Traefik](https://traefik.io/) - Reverse Proxy, used to automatically route `*.depot.lan` requests to applications running in containers.
+- [Portainer](https://www.portainer.io/) - UI for Docker daemon, also supports templates
+
+See [DESIGN.md](DESIGN.md) for more information
+
+## Storage Locations
+
+### Storage Drives
+MediaDepot will mount your hard drives to subfolders in the `/mnt` directory. These subfolders will be numbered and prefixed with `drive`.
+You will not have to create these folders, or interact with these mounted drives directly. The `mergerfs` filesystem will transparently proxy
+file operations to the correct disks.
+
+```
+/mnt/
+├── drive1/ - mount points for all hard drives
+├── drive2/
+├── drive3/
+```
+
+## MergerFS Drive
+The `mergerfs` JBOD volume will be mounted to the `/media/storage` folder. It is the primary file system used by all applications
+and containers on MediaDepot.
+
+```
+/media/
+├── storage/ - mergerfs mount point
+```
+
+## Temp Storage
+To limit usage of storage drives and decrease thrashing across multiple disks, high IO disk operations are targeted to the
+OS disk. We create a `/media/temp` directory to act as a cache directory for all these high IO operations.
+
+The `/media` directory is actually a `tmpfs` volume on CoreOS, which means it's stored on a RAMDisk and is destroyed during restarts.
+To solve this, we will bind mount the `/mnt/temp` to `/media/temp`.
+
+```
+/mnt/
+├── temp/ - cache directory for high IO operations
+
+/media/
+├── temp/ - mount point for cache directory
+```
+
+## Application Data
+Application settings and data is stored in the `/opt/mediadepot/apps/` directory of the OS disk. Subfolders of this directory are mounted
+into user created containers.
+
+```
+/opt/mediadepot/
+├── apps/ - user application settings and data
+│   ├── sickrage/
+│   ├── plex/
+│   └── couchpotato/
+```
+
+This directory can be easily backed up to cloud storage of your choice using the [`mediadepot/rclone`](https://www.github.com/mediadepot/docker-rclone) container.
+
+## Media Storage Structures
+
+
+
+## Containers & Portainer Templates
+
+
+# Installation
+
+## CoreOS Ignition
+
+
+
+
+
+
+
+
+---
+
+> ALL DOCUMENTATION BELOW HERE IS OLD AND NEEDS TO BE RE-WRITTEN AND MOVED ABOVE.
+
+
 # Planning
 This is an organization to group all the configuration and docker images required to setup a self-hosted media server with the following capabilities:
 
@@ -12,7 +124,6 @@ This is an organization to group all the configuration and docker images require
 
 # Assumptions
 Here are a couple of assumptions we are making:
-- The server will be self hosted, with only one node (if you need a multihosted media server, this wont work for you)
 - Drive storage will be configured using a JBOD array that will be mounted on the host, and can be shared with the docker containers
 - Pushover will be used to send remote notifications
 - Assumes that all drives have been formatted and mounted 
