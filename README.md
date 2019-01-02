@@ -12,6 +12,11 @@ The overall goal for this project is to automate the setup and configuration of 
 that all software is run in a maintainable & isolated way.
 - The server will be using JBOD disk storage (allowing you to aggregate and transparently interact with multiple physical disks as a single volume)
     - Redundancy is supported but not a requirement.
+- The server will provide a automation friendly folder structure for use by media managers (sickrage, couchpotato, sonar, plex, etc)
+- The server will provide a monitoring solution with a web GUI.
+- The server will provide a routing method to running web applications via a custom domain `*.depot.lan`
+- The server will provide a method that user applications can use to notify the user when events have occured (download started, completed, media added)
+- The server will provide a way to backup application configuration to a secondary location.
 
 # Design
 
@@ -37,6 +42,8 @@ and provide a foundation that all user Docker containers can build ontop of.
 - [Portainer](https://www.portainer.io/) - UI for Docker daemon, also supports templates
 
 See [DESIGN.md](DESIGN.md) for more information
+
+See [Containers & Portainer Templates](#)
 
 ## Storage Locations
 
@@ -76,6 +83,38 @@ To solve this, we will bind mount the `/mnt/temp` to `/media/temp`.
 ├── temp/ - mount point for cache directory
 ```
 
+## Media Storage Structures
+
+The folder structure below may look a bit complicated, however its designed to be as automation friendly as possible, while also
+being flexible enough to handle user naming schemes. The primary folders, and their uses, are as follows:
+
+- `/media/temp/blackhole/*` - temporarily contains `.torrent` files. These files can be added manually via SMB, or automatically by apps like sickrage, couchpotato, sonarr, etc.
+- `/media/temp/processing` - a cache directory used by your torent client. Temporarily holds current download files. Once complete they are moved into the correct subfolder of `/media/storage/downloads`
+- `/media/storage/downloads/*` - contains completed torrent downloads. Files added here are automatically detected by media managers (sickrage, couchpotato, etc) then renamed/reorganized and moved to their
+final storage directory `/media/storage/*`
+- `/media/storage/*` - contains the final renamed/organized media, to be used by your media streamer of choice (Plex/Emby/etc).
+All subfolders are automatically created as SMB shares
+
+
+```
+/media
+├── storage/
+│   ├── downloads/
+│   │   ├── movies/
+│   │   ├── music/
+│   │   ├── tvshows/
+│   ├── movies/
+│   ├── music/
+│   ├── tvshows/
+├── temp/
+│   ├── blackhole/
+│   │   ├── movies/
+│   │   ├── music/
+│   │   ├── tvshows/
+│   └── processing/
+
+```
+
 ## Application Data
 Application settings and data is stored in the `/opt/mediadepot/apps/` directory of the OS disk. Subfolders of this directory are mounted
 into user created containers.
@@ -90,11 +129,88 @@ into user created containers.
 
 This directory can be easily backed up to cloud storage of your choice using the [`mediadepot/rclone`](https://www.github.com/mediadepot/docker-rclone) container.
 
-## Media Storage Structures
+## User Containers & Portainer Templates
+As mentioned earlier, MediaDepot is built ontop of CoreOS, which is primarily a minimal operating system for Docker.
+All user applications should be run via Docker. While users can manually create docker containers using the `docker run` command,
+we've provided a helpful registry of pre-configured and tested templates that are designed to work with MediaDepot.
+You can access them by going to `http://admin.depot.lan/templates`.
+
+
+<< INSERT IMAGE HERE >>
+
+Here's a list of the maintained templates that we support.
+
+| Application Name | Maintainer | Description |
+| ------------- | ------------- | ------------- |
+| [Cardigann]() | [LinuxServer](linuxserver/cardigann)  | Cardigann, a server for adding extra indexers to Sonarr, SickRage and CouchPotato |
+| [Couchpotato]()  | [LinuxServer](linuxserver/couchpotato)  | CouchPotato (CP) is an automatic NZB and torrent downloader. |
+| [DuckDNS]() | [LinuxServer](linuxserver/cardigann) | Duckdns is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. |
+| [Heimdall]() | [LinuxServer](linuxserver/heimdall) | Heimdall is a way to organise all those links to your most used web sites |
+| [Jackett]() | [LinuxServer](linuxserver/jackett) | Jackett works as a proxy server it translates queries from apps like Sonarr etc into tracker-site-specific http queries |
+| [Klaxon]() | [MediaDepot](mediadepot/klaxon) | Klaxon is a free robot that checks websites regularly so you don't have to. |
+| [Mayan EDMS]() | [LinuxServer](linuxserver/jackett) | Mayan EDMS is an electronic vault for your documents. |
+| [Plex Media Server]() | [LinuxServer](linuxserver/plex) | Plex organizes your video, music, and photo collections and streams them |
+| [Plex Requests]() | [LinuxServer](linuxserver/plexrequests) | Simple automated way for users to request new content for Plex. |
+| [Radarr]() | [LinuxServer](linuxserver/radarr) | Radarr - A fork of Sonarr to work with movies la Couchpotato. |
+| **[Rclone Config Backup]()** | **[MediaDepot](mediadepot/rclone)** | **Rclone can be used to backup your application config directories to a cloud storage provider of your choice (Dropbox, GDrive, etc).** |
+| [Resilio Sync]() | [LinuxServer](linuxserver/resilio-sync) | Resilio Sync (formerly BitTorrent Sync) uses the BitTorrent protocol to sync files and folders |
+| **[ruTorrent]()** | **[MediaDepot](mediadepot/rutorrent)** | **ruTorrent is a quick and efficient BitTorrent client** |
+| [SickRage]() | [LinuxServer](linuxserver/sickrage) | Automatic Video Library Manager for TV Shows. |
+| [Sonarr]() | [LinuxServer](linuxserver/sonarr) | Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. |
+| [Tautulli]() | [LinuxServer](linuxserver/tautulli) | A Python based monitoring and tracking tool for Plex Media Server. |
+| [UrlWatch]() | [MediaDepot](mediadepot/urlwatch) | A tool for monitoring webpages for updates |
+| [Watchtower]() | [Community](v2tec/watchtower) | Automatically update running Docker containers |
+
+In addition to the pre-configured Dockerized Applications above, you may be interested in the following Self-Hosted software projects.
+If there's enough interest, they may be added to our template system.
+
+| Application Name | Maintainer | Description | Template Status |
+| ------------- | ------------- | ------------- | ------------- |
+| [Atlasboard](https://bitbucket.org/atlassian/atlasboard/src/master/) | [Community]() | Atlasboard is a dashboard framework written in nodejs.  |  |
+| [Airsonic]() | [LinuxServer](https://hub.docker.com/r/linuxserver/airsonic) | Airsonic is a free, web-based media streamer, providing ubiquitious access to your music |  |
+| [Booksonic]() | [LinuxServer](https://hub.docker.com/r/linuxserver/booksonic) | Booksonic is a server and an app for streaming your audiobooks to any pc or android phone.  |  |
+| [Compactd](https://github.com/compactd/compactd) | [Community]() | Compactd aims to be a self-hosted remote music player in your browser, streaming from you own personal server |  |
+| [Dashing]() | [Community]() | The exceptionally handsome dashboard framework. |  |
+| [Duplicati]() | [LinuxServer](https://hub.docker.com/r/linuxserver/duplicati) | Free backup software to store encrypted backups online For Windows, macOS and Linux | pending |
+| [Deluge]() | [MediaDepot](mediadepot/deluge) | Deluge is a lightweight, Free Software, cross-platform BitTorrent client. Full Encryption; WebUI; Plugin System; | deprecated |
+| [FileRun]() | [MediaDepot](mediadepot/filerun) | FileRun File Manager: access your files anywhere through self-hosted secure cloud storage | pending |
+| [Healthchecks]() | [LinuxServer](https://hub.docker.com/r/lsiocommunity/healthchecks)  | healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface. | pending |
+| [Hadouken]() | []() |  |  |
+| [Headphones]() | [LinuxServer](linuxserver/headphones) | headphones is an automated music downloader for NZB and Torrent, written in Python. |  |
+| [Koken]() | []() | Content management and web site publishing for photographers |  |
+| [Lychee]() | [LinuxServer](https://hub.docker.com/r/linuxserver/lychee) | Lychee is a free photo-management tool, which runs on your server or web-space. |  |
+| [LazyLibrarian]() | [LinuxServer](https://hub.docker.com/r/linuxserver/lazylibrarian) | LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs. | pending |
+| [Libresonic]() | [LinuxServer](https://hub.docker.com/r/linuxserver/libresonic) | Libresonic is a free, web-based media streamer, providing ubiqutious access to your music.  |  |
+| [Openvpn-As]() | [LinuxServer](https://hub.docker.com/r/linuxserver/openvpn-as) | OpenVPN Access Server is a full featured secure network tunneling VPN software solution |  |
+| [Pritunl](https://pritunl.com/) | [Community]() | Enterprise Distributed OpenVPN and IPsec Server |  |
+| [Syncovery](https://www.syncovery.com/) | [Community]() | Syncovery will copy your files the way you need it |  |
+| [OpenBazaar](https://openbazaar.org/) | [Community]() | Create a store. Sell whatever you’d like. Reach a new audience. Get paid in cryptocurrency |  |
+| []() | []() |  |  |
+| []() | []() |  |  |
+| []() | []() |  |  |
+| []() | []() |  |  |
 
 
 
-## Containers & Portainer Templates
+| []() | []() |  |  |
+
+- Log viewer web app /[splunk](http://www.splunk.com/en_us/products/splunk-enterprise/free-vs-enterprise.html)/fluentd webui/ loggly aggregator/Graylog/rtail
+- SubSonic/[Madsonic](https://github.com/mediadepot/docker-madsonic)/koel for Music/Mopidy/sonerezh/cloudtunes
+- Huginn/Bip Automation
+- SqlPad
+- visallo
+- dillinger
+- alltube
+- bookstack
+- tagspaces
+- dashboard/[muximux](https://github.com/mescon/Muximux)
+- monica - personal relationship manager
+- [lidarr](https://github.com/lidarr/Lidarr)
+- Ideas for other containers - https://github.com/DFabric/DPlatform-ShellCore https://github.com/Kickball/awesome-selfhosted#read-it-later-lists
+
+
+In addition to the software you see mentioned above, you should take a look at the full catalog of Docker Images maintained by [LinuxServer.io](https://www.linuxserver.io/).
+They are a community run organization that maintains FOSS Docker Images for the community.
 
 
 # Installation
@@ -102,6 +218,20 @@ This directory can be easily backed up to cloud storage of your choice using the
 ## CoreOS Ignition
 
 
+# FAQ
+## Maintenance
+- Assumes that all drives have been formatted and mounted
+- how to handle mounting drives. Should they be mounted via chef. If  yes, how do we configure all the various options for each drive, if no, how do we select all the mounted drives to use with greyhole.
+
+
+## Backups
+
+
+# Issues
+
+# Future Ideas
+
+# References
 
 
 
@@ -113,97 +243,6 @@ This directory can be easily backed up to cloud storage of your choice using the
 > ALL DOCUMENTATION BELOW HERE IS OLD AND NEEDS TO BE RE-WRITTEN AND MOVED ABOVE.
 
 
-# Planning
-This is an organization to group all the configuration and docker images required to setup a self-hosted media server with the following capabilities:
-
-- JBOD disk storage (allowing you to aggregate and transparently interact with multiple physical disks as a single volume)
-- Media server applications such as plex, sickbeard, couchpotato, etc to manage and view media
-- Utility applications such as ajenti, openvpn, conky, btsync, bittorrent.
-- Notifications system (so that you are notified whenever any service stops or starts, and when media is added)
-- Easy system OS updates - via a minimal OS (CoreOS or Atomic Host)
-
-# Assumptions
-Here are a couple of assumptions we are making:
-- Drive storage will be configured using a JBOD array that will be mounted on the host, and can be shared with the docker containers
-- Pushover will be used to send remote notifications
-- Assumes that all drives have been formatted and mounted 
-- **(NEW)** Dockerized applications will be run using [LinuxServer](https://github.com/linuxserver) created images where possible, leveraging open source community
-- **(NEW)** Dockerized applications will store their configuration on the file system, to ensure that it can persist across container destruction
-- **(NEW)** Minimal OS which primarily runs docker daemon.
-- **(NEW)** Container management is done via Rancher v2
-
-
-# Host Applications
-The following software will run on the host:
-- JBOD/Union FS (Mergerfs)
-- SSH daemon
-- Samba
-- Docker
-- SMART disk status - https://www.hdsentinel.com/hard_disk_sentinel_linux.php or similar
-- **(NEW)** SnapRAID for filesystem checksum
-
-
-# Docker Containers
-The following software can be run via docker containers:
-- **(NEW)** **(REQUIRED)** Dynamic DNS updater script/DuckDNS
-- **(NEW)** **(REQUIRED)** Rancher v2
-- **(NEW)** Healthchecks/Healthchecks container for Cron status tracking https://hub.docker.com/r/galexrt/healthchecks
-- **(NEW)** Backup via Rclone
-- Vault or other credential/secret management system
-- Ajenti? (does this make sense, or should it just be run on the Host)
-- [Couchpotato](https://github.com/mediadepot/docker-couchpotato)
-- [Deluge](https://github.com/mediadepot/docker-deluge)/Hadouken/ruTorrent/[rTorrent](https://github.com/mediadepot/docker-rtorrent) (torrent downloaders)
-  - Supports multiple watch directories
-  - Supports multiple/dynamic download directories
-  - Supports multiple/dynamic completed directories
-  - Supports user/password authentication
-  - Supports auto-labeling
-  - Supports scheduling/QoS
-  - Can work in docker container
-  - Auto cleanup?
-- [Headphones](https://github.com/mediadepot/docker-headphones)
-- [Plex](https://github.com/mediadepot/docker-plex)/Emby
-- [Plex-Requests](https://github.com/mediadepot/docker-plexrequests)/Ombi
-- [PlexPy](https://github.com/mediadepot/docker-plexpy)/Tautulli
-- [Sickrage](https://github.com/mediadepot/docker-sickrage)/Sickbeard
-- [Headphones](https://github.com/mediadepot/docker-headphones)
-- Nginx/HAProxy router
-- Log viewer web app /[splunk](http://www.splunk.com/en_us/products/splunk-enterprise/free-vs-enterprise.html)/fluentd webui/ loggly aggregator/Graylog/rtail
-- [BTSync](https://github.com/mediadepot/docker-btsync)/SyncThing/Seafile/Pydio/Nextcloud
-- [FileRun](https://github.com/mediadepot/docker-filerun) - file explorer
-- duplicati - Backup service
-- Update checker service
-- Lychee/Photato/Koken.me/chevereto
-- [Guacamole (VNC)](https://github.com/mediadepot/docker-guacamole)
-- [LazyLibrarian](https://github.com/mediadepot/docker-lazylibrarian)
-- OpenVPN_AS/pritunl
-- StremIO
-- Status Page/Dashboard - Dashing/Atlasboard
-- Sandstorm
-- openbazaar
-- [compactd](https://github.com/compactd/compactd)/AirSonic/SubSonic/[Madsonic](https://github.com/mediadepot/docker-madsonic)/Sonarr/koel for Music/Mopidy/sonerezh/cloudtunes
-- Huginn/Bip Automation
-- SqlPad
-- visallo
-- dillinger
-- [jDownloader](https://hub.docker.com/r/aptalca/docker-jdownloader2/)
-- alltube
-- bookstack
-- tagspaces
-- dashboard/[muximux](https://github.com/mescon/Muximux)
-- monica - personal relationship manager
-- paperless/ambar/mayan EDMS - document archival system + search
-- [lidarr](https://github.com/lidarr/Lidarr)
-- [klaxon](https://github.com/themarshallproject/klaxon) website change tracking
-- Ideas for other containers - https://github.com/DFabric/DPlatform-ShellCore https://github.com/Kickball/awesome-selfhosted#read-it-later-lists
-
-# Container Configuration
-- All containers will have configuration service to dynamically generate config files:
-  - https://github.com/jwilder/docker-gen
-  - https://github.com/jwilder/dockerize
-  - https://github.com/hashicorp/consul-template
-  - https://github.com/markround/tiller
-  - https://github.com/gliderlabs/registrator
 
 # Installation Script
 An `install.sh` script will be created that can be run using:
@@ -235,58 +274,8 @@ On second run, it should allow using existing configuration, or allow the user t
 - Run docker-compose (rancher-compose)
 - Create/Update the persistent data file in github gist
 
-
-
-# Persistent Data
-- Sickbeard Tv show names and ids will be saved
-- Couchpotato Movie names and ids will be saved
-- Hosts file entry template
-
-# Issues
-- how to handle mounting drives. Should they be mounted via chef. If  yes, how do we configure all the various options for each drive, if no, how do we select all the mounted drives to use with greyhole. 
-
-# Future Ideas
-- Create a rancher catalog repository to include base templates that are currently not supported. Allows for creating a rancher based application store. 
-  - https://github.com/rancher/rancher/wiki/Setup:-Settings
-  - http://localhost:9090/v1/settings
-    - service.package.catalog.url
-    - catalog.url
-
-# Service Discovery/Automatic SubDomain Assignment/Load Balancing
-- http://docs.rancher.com/rancher/rancher-ui/applications/stacks/adding-balancers/#advanced-routing-options
-- https://github.com/rancher/rancher/issues/2367
-- http://rancher.com/the-magical-moment-when-container-load-balancing-meets-service-discovery/
-- http://rancher.com/load-balancing-support-for-docker-in-rancher/
-- http://rancher.com/load-balancing-support-for-docker-in-rancher/
-- http://docs.rancher.com/rancher/labels/
-- http://rancher.com/virtual-host-routing-using-rancher-load-balancer/
-- http://docs.rancher.com/rancher/rancher-compose/
-- http://docs.rancher.com/rancher/rancher-compose/rancher-services/#advanced-load-balancing-(l7)
-
-
-
 # Logging
 - http://blog.treasuredata.com/blog/2015/08/03/5-use-cases-docker-fluentd/
-
-# Storage
-## Union/Local JBOD
-- mergerfs - https://www.linuxserver.io/index.php/2016/02/06/snapraid-mergerfs-docker-the-perfect-home-media-server-2016/
-- MHDDFS
-- AUFS
-- BTRFS
-- unRAID
-- RAID (mdadm)
-- ZFS
-
-## Distributed File Systems
-https://www.reddit.com/r/DataHoarder/comments/4ey8zj/looking_for_a_distributed_media_storage_solution/
-https://www.reddit.com/r/HomeServer/comments/4ey3qw/looking_for_a_distributed_media_storage_solution/
-
-- GlusterFS
-- CephFS
-- LizardFS
-- MooseFS
-- infinit.one
 
 # References
 - http://www.cyberciti.biz/tips/spice-up-your-unix-linux-shell-scripts.html
