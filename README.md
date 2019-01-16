@@ -151,6 +151,7 @@ Here's a list of the maintained templates that we support.
 | [Klaxon]() | [MediaDepot](mediadepot/klaxon) | Klaxon is a free robot that checks websites regularly so you don't have to. |
 | [Mayan EDMS]() | [LinuxServer](linuxserver/jackett) | Mayan EDMS is an electronic vault for your documents. |
 | [Plex Media Server]() | [LinuxServer](linuxserver/plex) | Plex organizes your video, music, and photo collections and streams them |
+| [Plex Media Server + CUDA]() | [MediaDepot](mediadepot/plex-cuda) | LinuxServer/plex image modifed to add support for hardware transcoding using Nvidia CUDA |
 | [Plex Requests]() | [LinuxServer](linuxserver/plexrequests) | Simple automated way for users to request new content for Plex. |
 | [Radarr]() | [LinuxServer](linuxserver/radarr) | Radarr - A fork of Sonarr to work with movies la Couchpotato. |
 | **[Rclone Config Backup]()** | **[MediaDepot](mediadepot/rclone)** | **Rclone can be used to backup your application config directories to a cloud storage provider of your choice (Dropbox, GDrive, etc).** |
