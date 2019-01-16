@@ -151,7 +151,6 @@ Here's a list of the maintained templates that we support.
 | [Klaxon]() | [MediaDepot](mediadepot/klaxon) | Klaxon is a free robot that checks websites regularly so you don't have to. |
 | [Mayan EDMS]() | [LinuxServer](linuxserver/jackett) | Mayan EDMS is an electronic vault for your documents. |
 | [Plex Media Server]() | [LinuxServer](linuxserver/plex) | Plex organizes your video, music, and photo collections and streams them |
-| [Plex Media Server + CUDA]() | [MediaDepot](mediadepot/plex-cuda) | LinuxServer/plex image modifed to add support for hardware transcoding using Nvidia CUDA |
 | [Plex Requests]() | [LinuxServer](linuxserver/plexrequests) | Simple automated way for users to request new content for Plex. |
 | [Radarr]() | [LinuxServer](linuxserver/radarr) | Radarr - A fork of Sonarr to work with movies la Couchpotato. |
 | **[Rclone Config Backup]()** | **[MediaDepot](mediadepot/rclone)** | **Rclone can be used to backup your application config directories to a cloud storage provider of your choice (Dropbox, GDrive, etc).** |
@@ -183,6 +182,7 @@ If there's enough interest, they may be added to our template system.
 | [LazyLibrarian]() | [LinuxServer](https://hub.docker.com/r/linuxserver/lazylibrarian) | LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs. | pending |
 | [Libresonic]() | [LinuxServer](https://hub.docker.com/r/linuxserver/libresonic) | Libresonic is a free, web-based media streamer, providing ubiqutious access to your music.  |  |
 | [Openvpn-As]() | [LinuxServer](https://hub.docker.com/r/linuxserver/openvpn-as) | OpenVPN Access Server is a full featured secure network tunneling VPN software solution |  |
+| [Plex Media Server + CUDA]() | [MediaDepot](mediadepot/plex-cuda) | LinuxServer/plex image modifed to add support for hardware transcoding using Nvidia CUDA | requires `device` support |
 | [Pritunl](https://pritunl.com/) | [Community]() | Enterprise Distributed OpenVPN and IPsec Server |  |
 | [Syncovery](https://www.syncovery.com/) | [Community]() | Syncovery will copy your files the way you need it |  |
 | [OpenBazaar](https://openbazaar.org/) | [Community]() | Create a store. Sell whatever you’d like. Reach a new audience. Get paid in cryptocurrency |  |
