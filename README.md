@@ -145,6 +145,7 @@ Here's a list of the maintained templates that we support.
 | [Cardigann]() | [LinuxServer](linuxserver/cardigann)  | Cardigann, a server for adding extra indexers to Sonarr, SickRage and CouchPotato |
 | [Couchpotato]()  | [LinuxServer](linuxserver/couchpotato)  | CouchPotato (CP) is an automatic NZB and torrent downloader. |
 | [DuckDNS]() | [LinuxServer](linuxserver/cardigann) | Duckdns is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. |
+| [Duplicati]() | [LinuxServer](https://hub.docker.com/r/linuxserver/duplicati) | Free backup software to store encrypted backups online For Windows, macOS and Linux |
 | [Heimdall]() | [LinuxServer](linuxserver/heimdall) | Heimdall is a way to organise all those links to your most used web sites |
 | [Jackett]() | [LinuxServer](linuxserver/jackett) | Jackett works as a proxy server it translates queries from apps like Sonarr etc into tracker-site-specific http queries |
 | [Klaxon]() | [MediaDepot](mediadepot/klaxon) | Klaxon is a free robot that checks websites regularly so you don't have to. |
@@ -171,7 +172,6 @@ If there's enough interest, they may be added to our template system.
 | [Booksonic]() | [LinuxServer](https://hub.docker.com/r/linuxserver/booksonic) | Booksonic is a server and an app for streaming your audiobooks to any pc or android phone.  |  |
 | [Compactd](https://github.com/compactd/compactd) | [Community]() | Compactd aims to be a self-hosted remote music player in your browser, streaming from you own personal server |  |
 | [Dashing]() | [Community]() | The exceptionally handsome dashboard framework. |  |
-| [Duplicati]() | [LinuxServer](https://hub.docker.com/r/linuxserver/duplicati) | Free backup software to store encrypted backups online For Windows, macOS and Linux | pending |
 | [Deluge]() | [MediaDepot](mediadepot/deluge) | Deluge is a lightweight, Free Software, cross-platform BitTorrent client. Full Encryption; WebUI; Plugin System; | deprecated |
 | [FileRun]() | [MediaDepot](mediadepot/filerun) | FileRun File Manager: access your files anywhere through self-hosted secure cloud storage | pending |
 | [Healthchecks]() | [LinuxServer](https://hub.docker.com/r/lsiocommunity/healthchecks)  | healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface. | pending |
