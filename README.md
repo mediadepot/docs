@@ -171,20 +171,27 @@ If there's enough interest, they may be added to our template system.
 | [Atlasboard](https://bitbucket.org/atlassian/atlasboard/src/master/) | [Community]() | Atlasboard is a dashboard framework written in nodejs.  |  |
 | [Airsonic]() | [LinuxServer](https://hub.docker.com/r/linuxserver/airsonic) | Airsonic is a free, web-based media streamer, providing ubiquitious access to your music |  |
 | [Booksonic]() | [LinuxServer](https://hub.docker.com/r/linuxserver/booksonic) | Booksonic is a server and an app for streaming your audiobooks to any pc or android phone.  |  |
+| [CampaignChain](https://www.campaignchain.com/) | []() | plan, execute, monitor, optimize and integrate all your campaigns, channels, activities and milestones in one place. | |
 | [Compactd](https://github.com/compactd/compactd) | [Community]() | Compactd aims to be a self-hosted remote music player in your browser, streaming from you own personal server |  |
 | [Dashing]() | [Community]() | The exceptionally handsome dashboard framework. |  |
 | [Deluge]() | [MediaDepot](mediadepot/deluge) | Deluge is a lightweight, Free Software, cross-platform BitTorrent client. Full Encryption; WebUI; Plugin System; | deprecated |
+| [Diskover](https://shirosaidev.github.io/diskover/) | [LinuxServer](https://hub.docker.com/r/linuxserver/diskover/) | diskover is a file system crawler and disk space usage software |  |
+| [Filebrowser](https://github.com/filebrowser/filebrowser) | [LinuxServer]() | Web File Browser which can be used as a middleware or standalone app.  |  |
+| [FunkWhale](https://funkwhale.audio/) | []() | A modern, convivial and free music server | |
 | [Healthchecks]() | [LinuxServer](https://hub.docker.com/r/lsiocommunity/healthchecks)  | healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface. | pending |
 | [Hadouken]() | []() |  |  |
 | [Headphones]() | [LinuxServer](linuxserver/headphones) | headphones is an automated music downloader for NZB and Torrent, written in Python. |  |
 | [Koken]() | []() | Content management and web site publishing for photographers |  |
+| [KeyCloak]() | []() |  |  |
 | [Lychee]() | [LinuxServer](https://hub.docker.com/r/linuxserver/lychee) | Lychee is a free photo-management tool, which runs on your server or web-space. |  |
 | [LazyLibrarian]() | [LinuxServer](https://hub.docker.com/r/linuxserver/lazylibrarian) | LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs. | pending |
 | [Libresonic]() | [LinuxServer](https://hub.docker.com/r/linuxserver/libresonic) | Libresonic is a free, web-based media streamer, providing ubiqutious access to your music.  |  |
 | [Openvpn-As]() | [LinuxServer](https://hub.docker.com/r/linuxserver/openvpn-as) | OpenVPN Access Server is a full featured secure network tunneling VPN software solution |  |
 | [Plex Media Server + CUDA]() | [MediaDepot](mediadepot/plex-cuda) | LinuxServer/plex image modifed to add support for hardware transcoding using Nvidia CUDA | requires `device` support |
 | [Pritunl](https://pritunl.com/) | [Community]() | Enterprise Distributed OpenVPN and IPsec Server |  |
+| [Subspace](https://github.com/subspacecloud/subspace) | []() |  A simple WireGuard VPN server GUI | |
 | [Syncovery](https://www.syncovery.com/) | [Community]() | Syncovery will copy your files the way you need it |  |
+| [TagSpaces](https://www.tagspaces.org) | []() | Your versatile file manager TagSpaces is an offline, open source, data manager.  It helps you to browse and organize your files. |  |
 | [OpenBazaar](https://openbazaar.org/) | [Community]() | Create a store. Sell whatever you’d like. Reach a new audience. Get paid in cryptocurrency |  |
 | []() | []() |  |  |
 | []() | []() |  |  |
@@ -242,6 +249,11 @@ They are a community run organization that maintains FOSS Docker Images for the 
 ---
 
 > ALL DOCUMENTATION BELOW HERE IS OLD AND NEEDS TO BE RE-WRITTEN AND MOVED ABOVE.
+
+
+
+- MOTD: https://github.com/yboetz/motd
+
 
 
 
