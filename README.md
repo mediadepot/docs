@@ -1,6 +1,9 @@
 This is the WIP design documentation for mediadepot v2.
 For archived v1 docs, check the [`v1` branch](https://github.com/mediadepot/docs/tree/v1)
 
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/VMcMtVY"><a href="//imgur.com/VMcMtVY"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 # Goal
 The overall goal for this project is to automate the setup and configuration of an home server.
 
