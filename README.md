@@ -3,8 +3,7 @@ For archived v1 docs, check the [`v1` branch](https://github.com/mediadepot/docs
 
 
 
-[![](https://imgur.com/cl5ReOY)](https://imgur.com/a/VMcMtVY)
-
+[![](https://i.imgur.com/cl5ReOY.jpg)](https://imgur.com/a/VMcMtVY)
 
 # Goal
 The overall goal for this project is to automate the setup and configuration of an home server.
