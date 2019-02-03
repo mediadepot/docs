@@ -229,6 +229,12 @@ They are a community run organization that maintains FOSS Docker Images for the 
 
 ## CoreOS Ignition
 
+# Screenshots
+
+Click to view the entire album.
+
+[![](https://i.imgur.com/cl5ReOY.jpg)](https://imgur.com/a/VMcMtVY)
+
 
 # FAQ
 ## Maintenance
