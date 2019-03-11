@@ -150,6 +150,7 @@ Here's a list of the maintained templates that we support.
 | [Couchpotato]()  | [LinuxServer](linuxserver/couchpotato)  | CouchPotato (CP) is an automatic NZB and torrent downloader. |
 | [DuckDNS]() | [LinuxServer](linuxserver/cardigann) | Duckdns is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. |
 | [Duplicati]() | [LinuxServer](https://hub.docker.com/r/linuxserver/duplicati) | Free backup software to store encrypted backups online For Windows, macOS and Linux |
+| [Droppy]() | [Silverwind](https://hub.docker.com/r/silverwind/droppy) | Droppy is a self-hosted file storage server  |
 | [FileRun]() | [Afian](afian/filerun) | FileRun File Manager: access your files anywhere through self-hosted secure cloud storage |
 | [Heimdall]() | [LinuxServer](linuxserver/heimdall) | Heimdall is a way to organise all those links to your most used web sites |
 | [Jackett]() | [LinuxServer](linuxserver/jackett) | Jackett works as a proxy server it translates queries from apps like Sonarr etc into tracker-site-specific http queries |
@@ -166,6 +167,7 @@ Here's a list of the maintained templates that we support.
 | [Tautulli]() | [LinuxServer](linuxserver/tautulli) | A Python based monitoring and tracking tool for Plex Media Server. |
 | [UrlWatch]() | [MediaDepot](mediadepot/urlwatch) | A tool for monitoring webpages for updates |
 | [Watchtower]() | [Community](v2tec/watchtower) | Automatically update running Docker containers |
+
 
 In addition to the pre-configured Dockerized Applications above, you may be interested in the following Self-Hosted software projects.
 If there's enough interest, they may be added to our template system.
