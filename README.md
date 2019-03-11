@@ -200,7 +200,7 @@ If there's enough interest, they may be added to our template system.
 | [TagSpaces](https://www.tagspaces.org) | []() | Your versatile file manager TagSpaces is an offline, open source, data manager.  It helps you to browse and organize your files. |  |
 | [OpenBazaar](https://openbazaar.org/) | [Community]() | Create a store. Sell whatever you’d like. Reach a new audience. Get paid in cryptocurrency |  |
 | [PassBolt](https://www.passbolt.com/) | []() |  |  |
-| []() | []() |  |  |
+| [PhotoPrism](https://github.com/photoprism/photoprism) | []() |  |  |
 | []() | []() |  |  |
 | []() | []() |  |  |
 
