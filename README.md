@@ -193,16 +193,19 @@ If there's enough interest, they may be added to our template system.
 | [LazyLibrarian]() | [LinuxServer](https://hub.docker.com/r/linuxserver/lazylibrarian) | LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs. | pending |
 | [Libresonic]() | [LinuxServer](https://hub.docker.com/r/linuxserver/libresonic) | Libresonic is a free, web-based media streamer, providing ubiqutious access to your music.  |  |
 | [Openvpn-As]() | [LinuxServer](https://hub.docker.com/r/linuxserver/openvpn-as) | OpenVPN Access Server is a full featured secure network tunneling VPN software solution |  |
+| [OpenBazaar](https://openbazaar.org/) | [Community]() | Create a store. Sell whatever you’d like. Reach a new audience. Get paid in cryptocurrency |  |
+| [OpenEats](https://github.com/open-eats/OpenEats) | [Community]() | Self Hosted Recipe Management App |  |
+| [PassBolt](https://www.passbolt.com/) | []() |  |  |
+| [PhotoPrism](https://github.com/photoprism/photoprism) | []() |  |  |
 | [Plex Media Server + CUDA]() | [MediaDepot](mediadepot/plex-cuda) | LinuxServer/plex image modifed to add support for hardware transcoding using Nvidia CUDA | requires `device` support |
 | [Pritunl](https://pritunl.com/) | [Community]() | Enterprise Distributed OpenVPN and IPsec Server |  |
 | [Subspace](https://github.com/subspacecloud/subspace) | []() |  A simple WireGuard VPN server GUI | |
 | [Syncovery](https://www.syncovery.com/) | [Community]() | Syncovery will copy your files the way you need it |  |
 | [TagSpaces](https://www.tagspaces.org) | []() | Your versatile file manager TagSpaces is an offline, open source, data manager.  It helps you to browse and organize your files. |  |
-| [OpenBazaar](https://openbazaar.org/) | [Community]() | Create a store. Sell whatever you’d like. Reach a new audience. Get paid in cryptocurrency |  |
-| [PassBolt](https://www.passbolt.com/) | []() |  |  |
-| [PhotoPrism](https://github.com/photoprism/photoprism) | []() |  |  |
-| []() | []() |  |  |
-| []() | []() |  |  |
+| [Zotoro](https://www.zotero.org/) | []() |  |  |
+| [Pinry](https://github.com/pinry/pinry) | []() | The open-source core of Pinry, a tiling image board system for people who want to save, tag, and share images, videos and webpages in an easy to skim through format. |  |
+| [Casebox](https://github.com/KETSE/casebox/network) | []() |  |  |
+
 
 
 
