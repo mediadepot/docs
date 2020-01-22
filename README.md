@@ -206,6 +206,7 @@ If there's enough interest, they may be added to our template system.
 | [Pinry](https://github.com/pinry/pinry) | []() | The open-source core of Pinry, a tiling image board system for people who want to save, tag, and share images, videos and webpages in an easy to skim through format. |  |
 | [Casebox](https://github.com/KETSE/casebox/network) | []() |  |  |
 | [Chowdown](https://github.com/clarklab/chowdown) | []() |  |  |
+| [Duplicacy](https://github.com/clarklab/chowdown) | []() |  |  |
 
 
 
