@@ -64,7 +64,7 @@ UUID=547b073d-e591-4913-b4fb-7c5084353979 /mnt/drive2             ext4    defaul
 
 This command can be used to synchronize a folder, and also resume copying when it's aborted half way. The command to copy one disk is:
 
-`rsync -avxHAWX --numeric-ids --info=progress2 /mnt/disk_source/ /mnt/disk3/`
+`rsync -avxHW --numeric-ids --info=progress2 /mnt/disk_source/ /mnt/disk3/`
 
 The options are:
 
@@ -73,8 +73,11 @@ The options are:
 -v  : verbose, mention files
 -x  : stay on one file system
 -H  : preserve hard links (not included with -a)
--A  : preserve ACLs/permissions (not included with -a)
 -W  : copy files whole (without rsync algorithm)
+--remove-source-files : delete source files on sync complete
+
+# The following options are not supported in CoreOS/Flatcar
+-A  : preserve ACLs/permissions (not included with -a)
 -X  : preserve extended attributes (not included with -a)
 --numeric-ids : don't map uid/gid values by user/group name
 --info=progress2 : instead of --progress is useful for large transfers, as it gives overall progress
